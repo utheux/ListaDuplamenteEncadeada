@@ -34,22 +34,19 @@ public class ListaDuplamenteEncadeada {
 
         while (atual != null) {
             if (atual.valor.equals(valor)) {
-                // Remoção do nó
                 if (atual.noAnterior != null) {
                     atual.noAnterior.noProximo = atual.noProximo;
                 } else {
-                    // Removendo o primeiro nó
                     inicio = atual.noProximo;
                 }
 
                 if (atual.noProximo != null) {
                     atual.noProximo.noAnterior = atual.noAnterior;
                 } else {
-                    // Removendo o último nó
                     fim = atual.noAnterior;
                 }
 
-                atual = null; // Liberar a memória do nó removido
+                atual = null; 
                 return;
             }
             atual = atual.noProximo;
